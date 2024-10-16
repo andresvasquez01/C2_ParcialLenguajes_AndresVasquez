@@ -1,19 +1,17 @@
 grammar MapFilter;
 
-program: mapExpr | filterExpr;
+program: statement+ EOF;
 
-mapExpr: 'MAP' '(' function ',' iterable ')';
-filterExpr: 'FILTER' '(' condition ',' iterable ')';
+statement: mapFunction
+         | filterFunction;
+
+mapFunction: 'MAP' '(' function ',' iterable ')';
+filterFunction: 'FILTER' '(' condition ',' iterable ')';
 
 function: IDENTIFIER;
 condition: IDENTIFIER;
 
-iterable:
-	'[' element (',' element)* ']'; // Simple list of elements
-
-element: NUMBER;
+iterable: IDENTIFIER;
 
 IDENTIFIER: [a-zA-Z_][a-zA-Z0-9_]*;
-NUMBER: [0-9]+;
-
-WS: [ 	]+ -> skip;
+WS: [ \t\r\n]+ -> skip;
