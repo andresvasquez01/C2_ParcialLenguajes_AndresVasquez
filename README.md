@@ -71,6 +71,14 @@ python3 visitor.py
 
 Esto procesará una expresión como `(2 + 7i) + (3 - 4i)` y devolverá el resultado de la operación.
 
+### Gramática Map
+
+El archivo `interpreter.py` contiene la implementación de la gramática `MapFilter.g4`. Para ejecutar la gramática Map:
+
+```bash
+python3 interpreter.py input.txt
+```
+
 ### Transformada de Fourier
 
 El archivo `visitorFourier.py` contiene la implementación del visitor para la gramática `Fourier.g4`. Para calcular la Transformada de Fourier de una serie:
