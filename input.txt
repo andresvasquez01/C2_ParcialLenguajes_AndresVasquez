@@ -1,2 +1,4 @@
-MAP(square, numeros)
-FILTER(even, numeros)
+MAP(double, numeros)
+MAP(cube, numeros)
+FILTER(odd, numeros)
+FILTER(is_prime, numeros)
